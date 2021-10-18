@@ -6,7 +6,7 @@ Boost library
 
 ## 1. How to compile and run
 count.cpp : Sequencial dynamic programming algorithm
-g++ -o count count.cpp
+g++ -o count src/count.cpp
 
 <!--## 2. Files-->
 <!--The following files are included in this folder, in addition to this readme-->
