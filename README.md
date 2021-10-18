@@ -5,7 +5,7 @@ C++ compiler
 Boost library
 
 ## 1. How to compile and run
-count.cpp : Sequencial dynamic programming algorithm\\
+count.cpp : Sequencial dynamic programming algorithm <br />
 g++ -o count src/count.cpp
 
 <!--## 2. Files-->
