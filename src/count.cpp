@@ -11,6 +11,7 @@ using std::vector;
 
 typedef boost::multiprecision::int128_t long_num;
 
+//Change RNA bases to numbers
 void base_to_num(const string line, vector<int>& seq) {
   for (char c : line) {
     if (c == 'A') 
@@ -25,14 +26,15 @@ void base_to_num(const string line, vector<int>& seq) {
   return;
 }
 
+
+// return true only for {A,U}, {C,G}, and {G,U} pairs 
 bool can_pair(const int a, const int b) {
-  // return true only for {A,U}, {C,G}, and {G,U} pairs 
   return ((a+b==3) || (a+b==5));
 }
 
 int
 main(int argc, const char **argv) {
-  //Get inpu sequence
+  //Get input  sequence
   string filename = argv[1];
   std::ifstream infile(filename);
   string line;
@@ -74,6 +76,7 @@ main(int argc, const char **argv) {
     }
   }
     
+  // ouput the total number of secondary structures
   cout << S[0][N-1] << endl;
 
   return EXIT_SUCCESS;
