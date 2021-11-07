@@ -1,12 +1,14 @@
 # ParallelRNA: Parallel RNA structure counting algorithm
 This is a readme file for a parallel RNA structure counting algorithm.
 ## 0. Prerequisites
-C++ compiler
-Boost library
+mpic++ compiler
+Boost library with MPI Implementation
+gcc/11.2.0
 
 ## 1. How to compile and run
-count.cpp : Sequencial dynamic programming algorithm <br />
-g++ -o count src/count.cpp
+countMPI.cpp : Sequencial dynamic programming algorithm <br />
+mpic++ -I/path/to/boost -o countMPI src/countMPI.cpp -L/path/to/boost/stage/lib/ -lboost_mpi -lboost_serialization
+mpirun -n numNodes countMPI input_file.txt
 
 <!--## 2. Files-->
 <!--The following files are included in this folder, in addition to this readme-->
