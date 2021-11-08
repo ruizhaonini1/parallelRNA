@@ -7,7 +7,7 @@ gcc/11.2.0
 
 ## 1. How to compile and run
 countMPI.cpp : Sequencial dynamic programming algorithm <br />
-mpic++ -I/path/to/boost -o countMPI src/countMPI.cpp -L/path/to/boost/stage/lib/ <br />
+mpic++ -I/path/to/boost -o countMPI src/count_MPI.cpp -L/path/to/boost/stage/lib/ <br />
         &emsp; &emsp; -lboost_mpi -lboost_serialization<br />
 mpirun -n numNodes countMPI input_file.txt
 
