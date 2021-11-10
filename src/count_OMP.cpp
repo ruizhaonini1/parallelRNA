@@ -76,12 +76,14 @@ main(int argc, const char **argv) {
   }
   
   // put this omp pragma into a for loop to go through all of the diagonals
-  // Move main for loop into this omp
-  // determine chunk of matrix to work on based on tid
-  
+  // Dynamically change how many threads are being used as we get closer to the end of the matrix?
+  // Like check if we can divide the diagonal nicely each loop, if we can't just get 1 or 2 threads to finish
   for (int d = 0 ; d < N - 2; d++){
+    // How long is the diagonal
     dlen = N - d;
+    // How big are the chunks for the different threads to work on?
     chunklen = ceil(dlen / NUMTHREADS);
+    
     #pragma omp parallel private(i,j,k)
     {
       int tid = omp_get_thread_num();
