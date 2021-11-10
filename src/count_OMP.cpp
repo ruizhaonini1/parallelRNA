@@ -16,6 +16,7 @@ typedef boost::multiprecision::int128_t long_num;
 
 int dlen;
 int chunklen;
+int i,j,k;
 
 //Change RNA bases to numbers
 void base_to_num(const string line, vector<int>& seq) {
@@ -81,7 +82,7 @@ main(int argc, const char **argv) {
   for (int d = 0 ; d < N - 2; d++){
     dlen = N - d;
     chunklen = ceil(dlen / NUMTHREADS);
-    #pragma omp parallel
+    #pragma omp parallel private(i,j,k)
     {
       int tid = omp_get_thread_num();
       int starting_pos = (chunklen * tid) + d;
@@ -90,14 +91,13 @@ main(int argc, const char **argv) {
       if (tid == (NUMTHREADS-1)){
           end_pos = N;
       }
-      
-      for (int j = starting_pos; j < end_pos; j++){
-          for (int i = d*tid; i < starting_pos; i++){
-              S[i][j] = S[i+1][j];
-              for (int k = i+4; k <=j; k++){
-                S[i][j] += (int)pairing[i][k]*S[i+1][k-1]*S[k+1][j];
-              }
-          }
+      i = d*tid;
+      for (j = starting_pos; j < end_pos; j++){
+            S[i][j] = S[i+1][j];
+            for (k = i+4; k <=j; k++){
+              S[i][j] += (int)pairing[i][k]*S[i+1][k-1]*S[k+1][j];
+            }
+            i++;
       }
       
     }
