@@ -12,8 +12,10 @@ using std::vector;
 
 typedef boost::multiprecision::int128_t long_num;
 
-int tid;
-int nthreads;
+#define NUMTHREADS 2
+
+int dlen;
+int chunklen;
 
 //Change RNA bases to numbers
 void base_to_num(const string line, vector<int>& seq) {
@@ -45,9 +47,7 @@ main(int argc, const char **argv) {
   std::getline(infile,line);
   int N = line.size();
   
-  omp_set_num_threads(2);
-  nthreads = omp_get_num_threads();
-  cout << "SEQUENTIAL NUM THREADS: " << nthreads << endl;
+  omp_set_num_threads(NUMTHREADS);
 
   //Convert the sequence into array of integers
   vector<int> seq;
@@ -77,18 +77,34 @@ main(int argc, const char **argv) {
   // put this omp pragma into a for loop to go through all of the diagonals
   // Move main for loop into this omp
   // determine chunk of matrix to work on based on tid
-  #pragma omp parallel private(tid) 
-  {
-    tid = omp_get_thread_num();
-    cout << "Parallel Section: Hello World from thread " << tid << endl;
-    if (tid == 0) {
-      nthreads = omp_get_num_threads();
-      cout << "Parallel Num Threads: " << nthreads << endl;
+  
+  for (int d = 0 ; d < N - 2; d++){
+    dlen = N - d;
+    chunklen = ceil(dlen / NUMTHREADS);
+    #pragma omp parallel
+    {
+      int tid = omp_get_thread_num();
+      int starting_pos = (chunklen * tid) + d;
+      int end_pos = starting_pos + chunklen;
+      
+      if (tid == (NUMTHREADS-1)){
+          end_pos = N;
+      }
+      
+      for (int j = starting_pos; j < end_pos; j++){
+          for (int i = d*tid; i < starting_pos; i++){
+              S[i][j] = S[i+1][j];
+              for (int k = i+4; k <=j; k++){
+                S[i][j] += (int)pairing[i][k]*S[i+1][k-1]*S[k+1][j];
+              }
+          }
+      }
+      
     }
-
   }
+  
   // main loop
-  for (int j = 0 ; j <N ; j++) {
+  for (int j = N - 2 ; j < N ; j++) {
     for (int i = j-1; i >= 0; i--) {
       S[i][j] = S[i+1][j];
       for (int k = i+4; k <=j; k++){
