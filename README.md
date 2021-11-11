@@ -20,3 +20,6 @@ gcc -o count_OMP -I/path/to/boost src/count_OMP.cpp -fopenmp <br />
 <!--<li>md.in: Input parameter file (to be redirected to the standard input)</li>-->
 <!--</ul>-->
 <!--![Screen shot of MD simulation](ScreenShot.png)-->
+
+## 2. Graphical Representation of the Algorithm
+![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/parallel%20rna.PNG)
