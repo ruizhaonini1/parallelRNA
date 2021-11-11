@@ -12,7 +12,7 @@ using std::vector;
 
 typedef boost::multiprecision::int128_t long_num;
 
-#define NUMTHREADS 2
+#define NUMTHREADS 4
 
 int dlen;
 int chunklen;
@@ -75,15 +75,14 @@ main(int argc, const char **argv) {
     S[i][i-1] = 1;
   }
   
-  // put this omp pragma into a for loop to go through all of the diagonals
+
   // Dynamically change how many threads are being used as we get closer to the end of the matrix?
-  // Like check if we can divide the diagonal nicely each loop, if we can't just get 1 or 2 threads to finish
-  for (int d = 0 ; d < N - 2; d++){
+  // Like check if we can divide the diagonal nicely each loop, if we can't just get 1 or 2 threads to finish 
+  for (int d =  1; d < N - 2; d++){
     // How long is the diagonal
     dlen = N - d;
     // How big are the chunks for the different threads to work on?
     chunklen = ceil(dlen / NUMTHREADS);
-    
     #pragma omp parallel private(i,j,k)
     {
       int tid = omp_get_thread_num();
@@ -93,7 +92,8 @@ main(int argc, const char **argv) {
       if (tid == (NUMTHREADS-1)){
           end_pos = N;
       }
-      i = d*tid;
+      
+      i = chunklen*tid;
       for (j = starting_pos; j < end_pos; j++){
             S[i][j] = S[i+1][j];
             for (k = i+4; k <=j; k++){
@@ -101,9 +101,15 @@ main(int argc, const char **argv) {
             }
             i++;
       }
-      
     }
   }
+  
+//  for (int a = 0; a < N; a++){
+//      for (int b = 0; b < N; b++){
+//          cout << S[a][b] << " ";
+//      }
+//      cout << endl;
+//  }
   
   // main loop
   for (int j = N - 2 ; j < N ; j++) {
