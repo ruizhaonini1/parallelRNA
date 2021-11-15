@@ -1,5 +1,8 @@
 # ParallelRNA: Parallel RNA structure counting algorithm
-This is a readme file for a parallel RNA structure counting algorithm.
+<!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/parallel%20rna.PNG) -->
+<!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/total%20fig.jpg) -->
+<img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/figure.jpg" width="300">
+<img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/ezgif.com-gif-maker.gif" width="600">
 ## 0. Prerequisites
 gcc/8.3.0 <br />
 openmp <br />
@@ -20,9 +23,3 @@ gcc -o count_OMP -I/path/to/boost src/count_OMP.cpp -fopenmp <br />
 <!--<li>md.in: Input parameter file (to be redirected to the standard input)</li>-->
 <!--</ul>-->
 <!--![Screen shot of MD simulation](ScreenShot.png)-->
-
-## 2. Graphical Representation of the Algorithm
-<!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/parallel%20rna.PNG) -->
-<!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/total%20fig.jpg) -->
-<img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/figure.jpg" width="300">
-<img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/ezgif.com-gif-maker.gif" width="600">
