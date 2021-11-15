@@ -3,6 +3,7 @@
 <!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/total%20fig.jpg) -->
 <img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/figure.jpg" width="300">
 <img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/ezgif.com-gif-maker.gif" width="600">
+
 ## 0. Prerequisites
 gcc/8.3.0 <br />
 openmp <br />
