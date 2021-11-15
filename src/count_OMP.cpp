@@ -89,7 +89,7 @@ main(int argc, const char **argv) {
       int starting_pos = (chunklen * tid) + d;
       int end_pos = starting_pos + chunklen;
       
-      if (tid == (NUMTHREADS-1)){
+      if (tid == (NUMTHREADS-1) || end_pos > N){
           end_pos = N;
       }
       
