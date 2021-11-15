@@ -11,8 +11,8 @@ Boost library
 
 ## 1. How to compile and run
 count_OMP.cpp : Sequencial dynamic programming algorithm <br />
-gcc -o count_OMP -I/path/to/boost src/count_OMP.cpp -fopenmp <br /> 
-  &emsp; &emsp; &emsp;-lstdc++ -L/path/to/boost/stage/lib/ -lboost_mpi -lboost_serialization <br /> <br />
+gcc  &emsp;-o count_OMP  &emsp;-I/<i>path</i>/<i>to</i>/<i>boost</i>  &emsp; src/count_OMP.cpp  &emsp;<b>-fopenmp</b> <br /> 
+  &emsp; &emsp; &emsp;<b>-lstdc++</b>  &emsp;-L/<i>path</i>/<i>to</i>/<i>boost</i>/stage/lib/  &emsp;<b>-lboost_mpi</b>  &emsp;<b>-lboost_serialization</b> <br /> <br />
 ./count_OMP input.txt
 
 <!--## 2. Files-->
