@@ -1,4 +1,4 @@
-# :dna: ParallelRNA: Parallel RNA structure counting algorithm :dna:
+# :dna:ParallelRNA:dna:: Parallel RNA structure counting algorithm 
 <!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/parallel%20rna.PNG) -->
 <!-- ![alt text](https://github.com/masarunakajima/parallelRNA/blob/openMP/total%20fig.jpg) -->
 <img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/figure.jpg" width="300">
