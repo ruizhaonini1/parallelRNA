@@ -60,12 +60,12 @@ main(int argc, const char **argv) {
   vector<vector<int> > S (N+1, vector<int>(N+1,0));
 
   // initialize with base cases
-  for (int i =0; i < N+1; i++) {
-    S[i][i] = 1;
-  }
-  for (int i =1; i < N+1; i++) {
-    S[i][i-1] = 1;
-  }
+  //for (int i =0; i < N+1; i++) {
+    //S[i][i] = 0;
+  //}
+  //for (int i =1; i < N+1; i++) {
+    //S[i][i-1] = 1;
+  //}
 
   // main loop
   for (int j = 0 ; j <N ; j++) {
