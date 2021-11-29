@@ -1,5 +1,6 @@
 # ParallelRNA: Parallel RNA structure counting algorithm
-This is a readme file for a parallel RNA structure counting algorithm.
+Secondary structures for nucleic acid sequences, DNA and RNA, are useful abstractions when examining certain behaviors of those molecules. We examine the problem of counting secondary structures compatible with an ordered multiset of sequences. In particular, we address the issue of accounting for indistinguishable secondary structures, for which no fast algorithm has been found. We provide a parallel algorithm for counting distinguishable secondary structures.
+
 ## 0. Prerequisites
 mpic++ compiler
 Boost library with MPI Implementation
