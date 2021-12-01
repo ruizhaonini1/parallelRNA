@@ -14,9 +14,7 @@ using std::vector;
 using std::min;
 using std::max;
 
-//typedef boost::multiprecision::int128_t long_num;
 
-//#define NUMTHREADS 10
 
 int dlen;
 int chunklen;
@@ -43,6 +41,19 @@ bool can_pair(const int a, const int b) {
   return ((a+b==3) || (a+b==5));
 }
 
+
+int compute_S_ij (const vector<vector<int> > &S, 
+    const vector<vector<bool> > &pairing,
+    const int i, const int j) {
+  int max_pair = S[i+1][j];
+  for (int k = i+4; k <=j; k++){
+    if (pairing[i][k]){
+      max_pair = max(max_pair,  1+S[i+1][k-1] +S[k+1][j]);
+    }
+  }
+  return max_pair;
+}
+
 int
 main(int argc, const char **argv) {
   //Get input  sequence
@@ -52,17 +63,13 @@ main(int argc, const char **argv) {
   string line;
   std::getline(infile,line);
   int N = line.size();
-  int min_len = 10;
+  int min_len = 10; 
   
-  //omp_set_num_threads(NUMTHREADS);
-  //omp_set_num_threads(numthreads);
   //Convert the sequence into array of integers
   vector<int> seq;
   base_to_num(line, seq);
 
   //Build pairing matrix
-  // pairing[i][j]=true if i and j can pair
-  // COULD WE DO THIS IN PARALLEL TOO?
   vector<vector<bool> > pairing(N, vector<bool>(N,false));
   for (int i = 0; i < N; i++) {
     for (int j = i+4; j < N; j++) {
@@ -76,8 +83,8 @@ main(int argc, const char **argv) {
 
   
   auto start = std::chrono::steady_clock::now();
-  // Dynamically change how many threads are being used as we get closer to the end of the matrix?
-  // Like check if we can divide the diagonal nicely each loop, if we can't just get 1 or 2 threads to finish 
+
+  // d is the offset from the diagonal 
   for (int d =  1; d < N ; ){
     // How long is the diagonal
     dlen = N - d;
@@ -85,8 +92,6 @@ main(int argc, const char **argv) {
     // decide the number of threads to use
     int nthrd = ceil (dlen*1.0/min_len) ;
     nthrd = min(nthrd, max_threads);
-    //printf("dlen: %d , nthrd: %d \n", dlen, nthrd);
-    
 
     // first triangles
     omp_set_num_threads(nthrd);
@@ -101,19 +106,12 @@ main(int argc, const char **argv) {
       int end_pos = starting_pos + chunklen ;
       
       if (tid == (nthrd-1) ){
-      //if(end_pos > N) {
-	    end_pos = N;
+        end_pos = N;
       }
 
       for (j = starting_pos; j < end_pos ; j++ ) {
         for (i = j - d; i >= starting_pos - d ; i--) {
-          int max_pair = S[i+1][j];
-          for (int k = i+4; k <=j; k++){
-            if (pairing[i][k]){
-              max_pair = max(max_pair,  1+S[i+1][k-1] +S[k+1][j]);
-            }
-          }
-          S[i][j] = max_pair;
+          S[i][j] = compute_S_ij(S, pairing, i, j);
         }
       }
     }
@@ -124,7 +122,7 @@ main(int argc, const char **argv) {
     int new_nthrd = nthrd - 1;
     omp_set_num_threads(new_nthrd);
     
-    #pragma omp parallel private(i,j,k)
+    #pragma omp parallel private(i,j)
     {
       int tid = omp_get_thread_num();
       int starting_pos = (chunklen * (tid+1)) + d;
@@ -136,29 +134,16 @@ main(int argc, const char **argv) {
 
       for (j = starting_pos; j < end_pos ; j++ ) {
         for (i = starting_pos- d -1; i >= j - chunklen - d ; i--) {
-          int max_pair = S[i+1][j];
-          for (int k = i+4; k <=j; k++){
-            if (pairing[i][k]){
-              max_pair = max(max_pair,  1+S[i+1][k-1] +S[k+1][j]);
-            }
-          }
-          S[i][j] = max_pair;
+          S[i][j] = compute_S_ij(S, pairing, i, j);
         }
       }
     }
     d += chunklen;
   }
   
-//  for (int a = 0; a < N; a++){
-//      for (int b = 0; b < N; b++){
-//          cout << S[a][b] << " ";
-//      }
-//      cout << endl;
-//  }
   
   auto end = std::chrono::steady_clock::now();
   std::chrono::duration<double> elapsed_seconds = end-start;
-  // ouput the total number of secondary structures
   cout << S[0][N-1] << endl;
   cout << "Time to fill matrix: " << elapsed_seconds.count() << "s" << endl;
   return EXIT_SUCCESS;
