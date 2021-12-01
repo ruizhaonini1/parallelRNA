@@ -1,0 +1,24 @@
+==========================================
+SLURM_JOB_ID = 6589402
+SLURM_JOB_NODELIST = e13-[42-43]
+TMPDIR = /tmp/SLURM_6589402
+==========================================
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by ./count_MPI)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by ./count_MPI)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found (required by ./count_MPI)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /spack/apps/linux-centos7-x86_64/gcc-8.3.0/openmpi-4.0.2-ipm3dnvlbtxawpi4ifz7jma6jgr7mexq/lib/libmpi_cxx.so.40)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found (required by /spack/apps/linux-centos7-x86_64/gcc-8.3.0/openmpi-4.0.2-ipm3dnvlbtxawpi4ifz7jma6jgr7mexq/lib/libmpi_cxx.so.40)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found (required by ./count_MPI)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /spack/apps/linux-centos7-x86_64/gcc-8.3.0/openmpi-4.0.2-ipm3dnvlbtxawpi4ifz7jma6jgr7mexq/lib/libmpi_cxx.so.40)
+./count_MPI: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found (required by /spack/apps/linux-centos7-x86_64/gcc-8.3.0/openmpi-4.0.2-ipm3dnvlbtxawpi4ifz7jma6jgr7mexq/lib/libmpi_cxx.so.40)
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[58342,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------

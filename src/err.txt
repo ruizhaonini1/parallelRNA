@@ -1,0 +1,64 @@
+/tmp/ccA2tRuv.o: In function `base_to_num(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<int, std::allocator<int> >&)':
+max_pair.cpp:(.text+0x20): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::begin() const'
+max_pair.cpp:(.text+0x30): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::end() const'
+/tmp/ccA2tRuv.o: In function `main':
+max_pair.cpp:(.text+0x157): undefined reference to `std::allocator<char>::allocator()'
+max_pair.cpp:(.text+0x17e): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)'
+max_pair.cpp:(.text+0x18d): undefined reference to `std::allocator<char>::~allocator()'
+max_pair.cpp:(.text+0x1ab): undefined reference to `std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)'
+max_pair.cpp:(.text+0x1ba): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string()'
+max_pair.cpp:(.text+0x1d3): undefined reference to `std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)'
+max_pair.cpp:(.text+0x1e2): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const'
+max_pair.cpp:(.text+0x20d): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+max_pair.cpp:(.text+0x235): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+max_pair.cpp:(.text+0x6a8): undefined reference to `std::cout'
+max_pair.cpp:(.text+0x6ad): undefined reference to `std::ostream::operator<<(int)'
+max_pair.cpp:(.text+0x6b2): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)'
+max_pair.cpp:(.text+0x6ba): undefined reference to `std::ostream::operator<<(std::ostream& (*)(std::ostream&))'
+max_pair.cpp:(.text+0x6fb): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+max_pair.cpp:(.text+0x70a): undefined reference to `std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()'
+max_pair.cpp:(.text+0x719): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+max_pair.cpp:(.text+0x732): undefined reference to `std::allocator<char>::~allocator()'
+max_pair.cpp:(.text+0x74f): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+max_pair.cpp:(.text+0x808): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+max_pair.cpp:(.text+0x817): undefined reference to `std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()'
+max_pair.cpp:(.text+0x82b): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()'
+/tmp/ccA2tRuv.o: In function `__static_initialization_and_destruction_0(int, int)':
+max_pair.cpp:(.text+0x869): undefined reference to `std::ios_base::Init::Init()'
+max_pair.cpp:(.text+0x878): undefined reference to `std::ios_base::Init::~Init()'
+/tmp/ccA2tRuv.o: In function `void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&)':
+max_pair.cpp:(.text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_[_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_]+0x1b8): undefined reference to `__cxa_begin_catch'
+max_pair.cpp:(.text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_[_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_]+0x221): undefined reference to `__cxa_rethrow'
+max_pair.cpp:(.text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_[_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_]+0x229): undefined reference to `__cxa_end_catch'
+/tmp/ccA2tRuv.o: In function `std::vector<int, std::allocator<int> >::_M_check_len(unsigned long, char const*) const':
+max_pair.cpp:(.text._ZNKSt6vectorIiSaIiEE12_M_check_lenEmPKc[_ZNKSt6vectorIiSaIiEE12_M_check_lenEmPKc]+0x4c): undefined reference to `std::__throw_length_error(char const*)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorIiE10deallocateEPim[_ZN9__gnu_cxx13new_allocatorIiE10deallocateEPim]+0x1c): undefined reference to `operator delete(void*)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<unsigned long>::deallocate(unsigned long*, unsigned long)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm[_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm]+0x1c): undefined reference to `operator delete(void*)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<unsigned long>::allocate(unsigned long, void const*)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorImE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorImE8allocateEmPKv]+0x2c): undefined reference to `std::__throw_bad_alloc()'
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorImE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorImE8allocateEmPKv]+0x3c): undefined reference to `operator new(unsigned long)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<std::vector<bool, std::allocator<bool> > >::deallocate(std::vector<bool, std::allocator<bool> >*, unsigned long)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE10deallocateEPS3_m[_ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE10deallocateEPS3_m]+0x1c): undefined reference to `operator delete(void*)'
+/tmp/ccA2tRuv.o: In function `std::vector<bool, std::allocator<bool> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<bool, std::allocator<bool> >*, unsigned long, std::vector<bool, std::allocator<bool> > >(std::vector<bool, std::allocator<bool> >*, unsigned long, std::vector<bool, std::allocator<bool> > const&)':
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_]+0x58): undefined reference to `__cxa_begin_catch'
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_]+0x70): undefined reference to `__cxa_rethrow'
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIbSaIbEEmS4_EET_S6_T0_RKT1_]+0x78): undefined reference to `__cxa_end_catch'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::deallocate(std::vector<int, std::allocator<int> >*, unsigned long)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE10deallocateEPS3_m[_ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE10deallocateEPS3_m]+0x1c): undefined reference to `operator delete(void*)'
+/tmp/ccA2tRuv.o: In function `std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&)':
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_]+0x58): undefined reference to `__cxa_begin_catch'
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_]+0x70): undefined reference to `__cxa_rethrow'
+max_pair.cpp:(.text._ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_[_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPSt6vectorIiSaIiEEmS4_EET_S6_T0_RKT1_]+0x78): undefined reference to `__cxa_end_catch'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv]+0x2c): undefined reference to `std::__throw_bad_alloc()'
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv]+0x3c): undefined reference to `operator new(unsigned long)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<std::vector<bool, std::allocator<bool> > >::allocate(unsigned long, void const*)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE8allocateEmPKv]+0x2c): undefined reference to `std::__throw_bad_alloc()'
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE8allocateEmPKv]+0x46): undefined reference to `operator new(unsigned long)'
+/tmp/ccA2tRuv.o: In function `__gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*)':
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE8allocateEmPKv]+0x2c): undefined reference to `std::__throw_bad_alloc()'
+max_pair.cpp:(.text._ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE8allocateEmPKv[_ZN9__gnu_cxx13new_allocatorISt6vectorIiSaIiEEE8allocateEmPKv]+0x45): undefined reference to `operator new(unsigned long)'
+/tmp/ccA2tRuv.o:(.eh_frame+0x2cb): undefined reference to `__gxx_personality_v0'
+collect2: error: ld returned 1 exit status

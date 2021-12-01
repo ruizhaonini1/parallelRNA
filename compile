@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -o max_pair_omp_tri src/max_pair_omp_tri.cpp -fopenmp -lstdc++ -lm 
