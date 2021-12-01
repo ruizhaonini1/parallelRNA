@@ -1,4 +1,3 @@
-#include <boost/multiprecision/cpp_int.hpp>
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -7,6 +6,7 @@
 #include <cstdlib>
 #include <chrono>
 #include <algorithm>
+#include <math.h>
 
 using std::string;
 using std::cout;
@@ -14,13 +14,9 @@ using std::endl;
 using std::vector;
 using std::max;
 
-typedef boost::multiprecision::int128_t long_num;
-
-//#define NUMTHREADS 10
-
 int dlen;
 int chunklen;
-int i,j,k;
+int i,j,k,tid,starting_pos,end_pos;
 
 //Change RNA bases to numbers
 void base_to_num(const string line, vector<int>& seq) {
@@ -89,11 +85,11 @@ main(int argc, const char **argv) {
     // How big are the chunks for the different threads to work on?
     chunklen = ceil(dlen / numthreads);
     
-    #pragma omp parallel private(i,j,k)
+    #pragma omp parallel private(i,j,k,tid,starting_pos,end_pos)
     {
-      int tid = omp_get_thread_num();
-      int starting_pos = (chunklen * tid) + d;
-      int end_pos = starting_pos + chunklen;
+      tid = omp_get_thread_num();
+      starting_pos = (chunklen * tid) + d;
+      end_pos = starting_pos + chunklen;
       
       if (tid == (numthreads-1) || end_pos > N){
       //if(end_pos > N) {
