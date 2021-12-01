@@ -15,6 +15,9 @@ g++ -o max_pair_omp src/max_pair_omp.cpp -fopenmp
 ./max_pair_omp input.txt num_threads
 ```
 
+## 2. Triangle Algorithm Visual
+
+<img src="https://github.com/masarunakajima/parallelRNA/blob/openMP/tri-gif.gif" width="600">
 <!--## 2. Files-->
 <!--The following files are included in this folder, in addition to this readme-->
 <!--file, readme.md.-->
