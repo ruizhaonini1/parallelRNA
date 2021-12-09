@@ -11,6 +11,7 @@ using std::endl;
 using std::vector;
 using std::max;
 
+
 int max_pair(const vector< vector<uint> > &S, const vector< vector<bool> > &pairing, 
     const uint i, const uint j){
   uint max_pair = S[i+1][j];

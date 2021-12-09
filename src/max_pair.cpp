@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 using std::string;
 using std::cout;
@@ -67,7 +68,9 @@ main(int argc, const char **argv) {
     //S[i][i-1] = 1;
   //}
 
+  auto start = std::chrono::steady_clock::now();
   // main loop
+  //
   for (int j = 0 ; j <N ; j++) {
     for (int i = j-1; i >= 0; i--) {
       int max_pair = S[i+1][j] ;
@@ -80,9 +83,12 @@ main(int argc, const char **argv) {
     }
   }
     
+  auto end = std::chrono::steady_clock::now();
+  std::chrono::duration<double> elapsed_seconds = end-start;
   // ouput the total number of secondary structures
   cout << S[0][N-1] << endl;
 
+  cout << "Time to fill matrix: " << elapsed_seconds.count() << "s" << endl;
   return EXIT_SUCCESS;
 
 }
